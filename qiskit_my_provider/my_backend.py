@@ -8,8 +8,8 @@ from .my_job import MyJob
 
 class MyBackend(Backend):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
         # Create Target
         self._target = Target('Target for My Backend')
@@ -30,7 +30,7 @@ class MyBackend(Backend):
     
     @classmethod
     def _default_options(cls):
-        Options(shots=1024, memory=False)
+        return Options(shots=1024, memory=False)
 
     def run(self, circuits, **kwargs):
 
