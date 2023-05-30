@@ -10,7 +10,7 @@ class MyProvider(Provider):
         self.token = token
         self.backends = [MyBackend(provider=self)]
 
-    def backends(self. name=None, **kwargs):
+    def backends(self, name=None, **kwargs):
         if name:
             backends = [
                 backend for backend in backends if backend.name() == name]
